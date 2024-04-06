@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --black: black;
+  --red: red;
+  --green: green;
+  --blue: blue;
+  --beige: beige;
+  --brown: brown;
+  --navy: navy;
+  --cream: #FFFDD0;
+}
+
+body {
+  font-family: "Roboto";
+  background-color: white;
+}
+
+.swiper {
+  width: 100%;
+  max-height: 800px;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .swiper {
+    height: 490px;
+  }
+}
+.swiper .swiper-button-prev:after {
+  color: #666;
+  font-size: 1.5rem;
+}
+.swiper .swiper-button-next:after {
+  color: #666;
+  font-size: 1.5rem;
+}
+.swiper .swiper-scrollbar {
+  max-width: 70%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.swiper .swiper-wrapper {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  width: 100%;
+  text-align: center;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  max-width: 100%;
+  align-self: center;
+  max-height: 80%;
+}
+.swiper .swiper-wrapper .swiper-slide h3 {
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+@media screen and (max-width: 600px) {
+  .swiper .swiper-wrapper .swiper-slide h3 {
+    font-size: 1rem;
+  }
+}
+.swiper .swiper-wrapper .swiper-slide p {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  color: red;
+}
+.swiper .swiper-wrapper .swiper-slide .old-price {
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+.swiper .swiper-wrapper .swiper-slide .product-url {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+@media screen and (max-width: 600px) {
+  .swiper .swiper-wrapper .swiper-slide .product-url {
+    display: none;
+  }
+}
+
+.toggle input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.toggle input + label {
+  margin: 0;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  border: solid 2px #000000;
+  background-color: #FFF;
+  font-size: 1.2rem;
+  line-height: 140%;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.toggle input:hover + label {
+  box-shadow: 0 0 15px rgba(143, 144, 145, 0.5);
+}
+
+.toggle input:checked + label {
+  border-color: black;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 15px rgba(91, 92, 92, 0.5);
+  z-index: 1;
+}
+
+#data-output {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  #data-output {
+    height: 600px;
+  }
+}
+#data-output .output-inner {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+#data-output .output-inner .step-count-section {
+  position: absolute;
+  bottom: 5rem;
+  height: 3px;
+  width: 186px;
+  display: flex;
+  gap: 3px;
+}
+#data-output .output-inner .step-count-section .step-count {
+  width: 60px;
+  background-color: rgb(145, 145, 145);
+}
+#data-output .output-inner .toggle {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+#data-output .output-inner .toggle .color-input + .color-label {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#data-output .output-inner .toggle .color-input + .color-label p {
+  display: none;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+#data-output .output-inner .toggle .color-input:hover + .color-label {
+  padding: 0;
+  border: 2px solid grey;
+}
+#data-output .output-inner .toggle .color-input:checked + .color-label {
+  height: 2.7rem;
+  width: 2.7rem;
+  border: 2px solid grey;
+  color: grey;
+  z-index: 1;
+}
+#data-output .output-inner .toggle .color-input:checked + .color-label p {
+  display: flex;
+}
+#data-output .output-inner .toggle .price-input {
+  width: 40%;
+  min-width: 130px;
+}
+#data-output .output-inner .toggle input + label {
+  font-size: 1rem;
+  width: 300px;
+  max-width: 90%;
+  border-radius: 2rem;
+}
+#data-output .output-inner .btnSection {
+  width: 500px;
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  gap: 50%;
+  bottom: 1rem;
+}
+#data-output .output-inner .btnSection button {
+  width: 5rem;
+  height: 2.5rem;
+  border: solid 2px #282828;
+  background-color: #FFF;
+  color: #000000;
+  border-radius: 2rem;
+  transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+#data-output .output-inner .btnSection button:hover {
+  background-color: #000000;
+  color: #FFF;
+}
+#data-output .output-inner .btnSection button[disabled] {
+  background-color: #cdcdcd;
+  color: #666;
+  border: solid 2px #a2a2a2;
+  cursor: not-allowed;
+}
+#data-output .output-inner .btnSection button[disabled]:hover {
+  background-color: #cdcdcd;
+  color: #666;
+}
+#data-output .output-inner .step-header {
+  font-size: 1.3rem;
+  margin-bottom: 7rem;
+  margin-top: 6rem;
+  max-width: 90%;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  #data-output .output-inner .step-header {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
+}
+#data-output .output-inner .step-sub-header {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 90%;
+  text-align: center;
+  margin-top: 4rem;
+}
+@media screen and (max-width: 600px) {
+  #data-output .output-inner .step-sub-header {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+#data-output .output-inner .item-not-found {
+  font-size: 1.3rem;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
